@@ -1,0 +1,23 @@
+{
+  "name": "share-bsharex-xyz",
+  "version": "1.0.0",
+  "description": "I am refactoring the code from v1 and splitting the project into 2 parts - the upload service and the viewing service. \r As this container will be ran from any cloud instance and will not have direct connection with a user it can be placed and scalable server-less inferstructe",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js --ignore *.json",
+    "dockerbuild": "docker build -t mrburtuk/share-bsharex .",
+    "dockertag": "docker tag mrburtuk/share-bsharex europe-west2-docker.pkg.dev/fir-workers-fb1be/bsharex-xyz/share-bsharex",
+    "dockerpush": "docker push europe-west2-docker.pkg.dev/fir-workers-fb1be/bsharex-xyz/share-bsharex",
+    "dockerdeploy": "npm run dockerbuild && npm run dockertag && npm run dockerpush"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.1"
+  }
+}

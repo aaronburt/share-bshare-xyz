@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-primary col-12 text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Download <% if(showtitle){ %>'<%= DB_RESPONSE.originalname %>'<% } %>
+</button>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+            <div class="modal-header">
+                <h5 class="modal-title text-white" id="staticBackdropLabel">Warning</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-white">
+                Woah there, before clicking on the download link make sure you know what this file is and if its safe to install/execute on your machine
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Close</button>
+                <a href="<%= S3_RESPONSE.url %>" target="_blank"><button type="button" class="btn btn-danger">Download</button></a>
+            </div>
+        </div>
+    </div>
+</div>

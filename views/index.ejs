@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+    <%- include('partials/head') %>
+</head>
+
+<body class="bg-dark">
+    <%- include('partials/navbar') %>
+    <div id="container-class" class="container-xxl mt-3">
+        <div class="row">
+            <% switch (MEDIATYPE) {
+                case "video": 
+                case "audio":
+                %>
+                    <%- include('partials/media/video') %>
+                <% break;
+                case "image": %>
+                    <%- include('partials/media/image') %>
+                <% break;
+                default: %>
+                    <%- include('partials/menu/download_wrapper', { showtitle: true }) %>
+                <% break; } %>
+
+            <%- include('partials/menu/info', { showtitle: false }) %>
+        <div>
+    </div>
+    <%- include('partials/script') %>
+
+</body>
+</html>
