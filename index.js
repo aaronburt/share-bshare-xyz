@@ -1,6 +1,6 @@
 /* Condtional statement to check env is in dev mode */ 
 if(!process.env.NODE_PRODUCTION){ require('dotenv').config(); }
-const { S3_BUCKET, SIMPLE_STORAGE_TOKEN, EXPRESS_PORT, FIREBASE_COLLECTION } = process.env;
+const { S3_BUCKET, SIMPLE_STORAGE_TOKEN, PORT, FIREBASE_COLLECTION } = process.env;
 const { initializeApp, cert } = require('firebase-admin/app');
 const { getFirestore, FieldValue } = require('firebase-admin/firestore');
 const config = require("./config/config");
@@ -42,4 +42,4 @@ app.get('/preview/:objectId', async(req, res) => {
     }
 });
 
-const listener = app.listen(EXPRESS_PORT || 8080, () => { console.log(`Instance started on port ${listener.address().port}`) });
+const listener = app.listen(PORT || 8080, () => { console.log(`Instance started on port ${listener.address().port}`) });

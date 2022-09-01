@@ -1,36 +1,9 @@
-
-<script src="/public/script/video.min.js"></script>
+<script src="/public/script/video-js/video.min.js"></script>
+<script src="/public/script/video-js/videojs.persistvolume.js"></script>
+<script src="https://unpkg.com/videojs-share@3.2.1/dist/videojs-share.min.js"></script>
+<script src="/public/script/video-js/video_js_custom.js"></script>
+<script src="/public/script/video-js/changeState.js"></script>
 <script src="/public/script/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/518f0c9762.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/videojs-share@3.2.1/dist/videojs-share.min.js"></script>
-
-<script>
-    const player = videojs('my-video');
-
-    var myButton = player.controlBar.addChild("button");
-    var myButtonDom = myButton.el();
-    myButtonDom.innerHTML = '<i class="fa-solid fa-maximize"></i>';
 
 
-    function toggleClass(divName){
-        const containerDiv = document.getElementById(divName);
-        const divClassList = containerDiv.classList;
-        
-        if(divClassList.contains('container-xxl')){
-            divClassList.remove('container-xxl');
-            divClassList.add('container-fluid');
-        } else {
-            divClassList.remove('container-fluid');
-            divClassList.add('container-xxl');
-        }
-    }
-
-    myButtonDom.onclick = () => { toggleClass('container-class'); }  
-
-    const shareOptions = {
-        socials: ['fb', 'tw', 'reddit', 'messenger', 'telegram', 'whatsapp'],    
-        url: window.location.href,
-    }
-     
-    player.share(shareOptions);
-</script>
