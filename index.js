@@ -42,4 +42,4 @@ app.get('/preview/:objectId', async(req, res) => {
     }
 });
 
-const listener = app.listen(PORT || 8080, () => { console.log(`Instance started on port ${listener.address().port}`) });
+const listener = app.listen(8080, () => { console.log(`Instance started on port ${listener.address().port}`) });
