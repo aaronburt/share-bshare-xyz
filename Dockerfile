@@ -16,7 +16,7 @@ WORKDIR /app
 COPY --from=Builder /app /app
 
 # Expose access to port 8080 for index.js
-EXPOSE 80
+EXPOSE 8080
 
 # Run index.js
 CMD [ "node", "index.js" ]
